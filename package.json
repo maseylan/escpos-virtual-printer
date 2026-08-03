@@ -1,0 +1,82 @@
+{
+  "name": "escpos-virtual-printer-emulator",
+  "version": "1.0.0",
+  "description": "ESC/POS virtual printer emulator built with Node.js + Electron + React + TypeScript",
+  "main": "./out/main/index.js",
+  "author": "ESC/POS Emulator Team",
+  "homepage": "https://github.com/your-username/escpos-virtual-printer-emulator",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "rebuild": "electron-rebuild -f -w serialport",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-vite build && electron-builder --dir",
+    "dist:win": "electron-vite build && electron-builder --win nsis",
+    "dist:linux": "electron-vite build && electron-builder --linux AppImage deb",
+    "dist:mac": "electron-vite build && electron-builder --mac dmg"
+  },
+  "build": {
+    "appId": "com.escpos.virtualprinter",
+    "productName": "ESC-POS-Virtual-Printer",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/serialport/**",
+      "node_modules/@serialport/**"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.utilities",
+      "identity": null
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "ESC/POS Emulator Team"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "electron-log": "^5.2.4",
+    "pino": "^9.5.0",
+    "serialport": "^12.0.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.1",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
