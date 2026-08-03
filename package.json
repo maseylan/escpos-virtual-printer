@@ -4,7 +4,7 @@
   "description": "ESC/POS virtual printer emulator built with Node.js + Electron + React + TypeScript",
   "main": "./out/main/index.js",
   "author": "ESC/POS Emulator Team",
-  "homepage": "https://github.com/your-username/escpos-virtual-printer-emulator",
+  "homepage": "https://github.com/maseylan/escpos-virtual-printer",
   "license": "MIT",
   "scripts": {
     "dev": "electron-vite dev",
@@ -41,6 +41,12 @@
       "category": "public.app-category.utilities",
       "identity": null
     },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false
+    },
     "linux": {
       "target": [
         "AppImage",
@@ -48,11 +54,6 @@
       ],
       "category": "Utility",
       "maintainer": "ESC/POS Emulator Team"
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ]
     },
     "nsis": {
       "oneClick": false,

@@ -80,6 +80,17 @@ Output goes to `release/`:
 
 > If you see a SUID sandbox error when running the unpacked build, either run with `--no-sandbox` or fix the sandbox permissions: `sudo chown root:root release/linux-unpacked/chrome-sandbox && sudo chmod 4755 release/linux-unpacked/chrome-sandbox`
 
+### GitHub Releases (automatic)
+
+This repository uses a [GitHub Actions workflow](.github/workflows/release.yml) that builds the Windows, Linux, and macOS executables in the cloud whenever a version tag is pushed, and attaches them to the [Releases](https://github.com/maseylan/escpos-virtual-printer/releases) page:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Just download the right file for your OS from the Releases page — no build required.`
+
 ## Project Structure
 
 ```
