@@ -27,6 +27,7 @@ jobs:
             script: dist:mac
             files: |
               release/*.dmg
+              release/*.zip
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4

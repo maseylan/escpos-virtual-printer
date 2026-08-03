@@ -73,10 +73,12 @@ npm run dist:mac      # macOS dmg (requires macOS)
 
 Output goes to `release/`:
 
-- **Linux AppImage** — run directly; requires `libfuse2` on Debian/Ubuntu (`sudo apt install libfuse2`)
+- **Linux AppImage** — portable, run directly (no install); requires `libfuse2` on Debian/Ubuntu (`sudo apt install libfuse2`)
 - **Linux deb** — `sudo dpkg -i release/*.deb`
-- **Windows** — run the NSIS installer
-- **macOS dmg** — build and sign on a Mac (`npm run dist:mac`); the resulting `.dmg` mounts to a drag-and-drop app. Since `serialport` is a native module, the app must be built on macOS — cross-building from Linux/Windows is not supported for `.dmg`
+- **Windows Setup.exe** — NSIS installer
+- **Windows Portable.exe** — no install, run directly
+- **macOS dmg** — drag-and-drop installer (build on a Mac)
+- **macOS zip** — portable `.app` bundle, extract and run
 
 > If you see a SUID sandbox error when running the unpacked build, either run with `--no-sandbox` or fix the sandbox permissions: `sudo chown root:root release/linux-unpacked/chrome-sandbox && sudo chmod 4755 release/linux-unpacked/chrome-sandbox`
 
