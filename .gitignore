@@ -6,3 +6,4 @@ release/
 *.tsbuildinfo
 .DS_Store
 .vite/
+share.txt

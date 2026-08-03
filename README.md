@@ -1,7 +1,7 @@
 # 🖨️ ESC/POS Virtual Printer Emulator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](https://github.com/your-username/escpos-virtual-printer-emulator)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](https://github.com/maseylan/escpos-virtual-printer)
 
 > **ESC/POS virtual printer emulator built with Node.js + Electron + React + TypeScript**
 > Turn your computer into a virtual receipt printer for testing and development.
@@ -24,7 +24,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/escpos-virtual-printer-emulator.git
+git clone https://github.com/maseylan/escpos-virtual-printer.git
 cd escpos-virtual-printer-emulator
 
 # or simply copy this project folder
