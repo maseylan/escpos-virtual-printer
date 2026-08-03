@@ -16,9 +16,9 @@
     "rebuild": "electron-rebuild -f -w serialport",
     "postinstall": "electron-builder install-app-deps",
     "dist": "electron-vite build && electron-builder --dir",
-    "dist:win": "electron-vite build && electron-builder --win nsis --publish never",
-    "dist:linux": "electron-vite build && electron-builder --linux AppImage deb --publish never",
-    "dist:mac": "electron-vite build && electron-builder --mac dmg --publish never"
+    "dist:win": "electron-vite build && electron-builder --win --publish never",
+    "dist:linux": "electron-vite build && electron-builder --linux --publish never",
+    "dist:mac": "electron-vite build && electron-builder --mac --publish never"
   },
   "build": {
     "appId": "com.escpos.virtualprinter",
