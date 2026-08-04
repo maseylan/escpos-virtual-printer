@@ -1,9 +1,9 @@
 {
-  "name": "escpos-virtual-printer-emulator",
-  "version": "1.0.0",
+  "name": "escpos-virtual-printer",
+  "version": "1.0.4",
   "description": "ESC/POS virtual printer emulator built with Node.js + Electron + React + TypeScript",
   "main": "./out/main/index.js",
-  "author": "ESC/POS Emulator Team",
+  "author": "Maseylan",
   "homepage": "https://github.com/maseylan/escpos-virtual-printer",
   "license": "MIT",
   "scripts": {
@@ -26,6 +26,7 @@
     "directories": {
       "output": "release"
     },
+    "afterPack": "scripts/after-pack.cjs",
     "files": [
       "out/**",
       "package.json"
@@ -55,7 +56,10 @@
         "deb"
       ],
       "category": "Utility",
-      "maintainer": "ESC/POS Emulator Team"
+      "maintainer": "ESC/POS Emulator Team",
+      "executableArgs": [
+        "--no-sandbox"
+      ]
     },
     "nsis": {
       "oneClick": false,
